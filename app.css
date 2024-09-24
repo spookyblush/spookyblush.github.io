@@ -1,0 +1,49 @@
+body {
+    font-family: Inconsolata;
+    font-size: 18px;
+    background-color: #2a2a2a;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto; /* Aligns the table to the center of the webpage */
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #555;
+    width: 25%;
+}
+
+th {
+    background-color: #444;
+}
+
+.expandable-row {
+    background-color: #006400;
+    color: #fff;
+}
+
+.expandable-row:hover {
+    background-color: #008000;
+}
+
+.detail-row {
+    background-color: #555;
+    font-style: italic;
+}
+
+#searchBar {
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto; /* Center the search bar with some margin */
+    display: block;
+    font-size: 16px;
+    border: 1px solid #555;
+    border-radius: 4px; /* Rounded corners */
+}
