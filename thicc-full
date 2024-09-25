@@ -11,61 +11,355 @@
   <body>
     <!-- Container for Filters and Table -->
     <div id="container">
-        <!-- Checkbox Filters -->
-        <div id="filterContainer">
-    <button id="toggleFilterBtn" onclick="toggleFilterMenu()">Show Filters</button>
-    <div id="filterMenu" style="display: none;">
-    <div class="checkbox-group">
-        <label>
+      <!-- Checkbox Filters -->
+      <div id="filterContainer">
+        <button id="toggleFilterBtn" onclick="toggleFilterMenu()">Show Filters</button>
+      <div id="filterMenu" style="display: none;">
+        <div class="checkbox-group">
+          <label>
             <input type="checkbox" value="Armadillidium" onchange="filterByGenus()"> Armadillidium
             <span class="count">(0)</span>
-        </label>
-        <label>
+          </label>
+          <label>
             <input type="checkbox" value="Oniscus" onchange="filterByGenus()"> Oniscus
             <span class="count">(0)</span>
-        </label>
-        <label>
+          </label>
+          <label>
             <input type="checkbox" value="Porcellio" onchange="filterByGenus()"> Porcellio
             <span class="count">(0)</span>
-        </label>
-        <label>
+          </label>
+          <label>
             <input type="checkbox" value="Porcellionides" onchange="filterByGenus()"> Porcellionides
             <span class="count">(0)</span>
-        </label>
-        <label>
+          </label>
+          <label>
             <input type="checkbox" value="Other" onchange="filterByGenus()"> Other
             <span class="count">(0)</span>
-        </label>
-    </div>
-</div>
+          </label>
+        </div>
+      </div>
 
     <input type="text" id="searchBar" placeholder="Search for sellers..." onkeyup="filterTable()">
 </div>
 
         <!-- Table -->
         <table>
-            <thead>
-                <tr>
-                    <th>Seller</th>
-                    <th>Cost</th>
-                    <th># of Pods</th>
-                    <th>Price per Pod</th>
+          <thead>
+            <tr>
+              <th scope="col" colspan="6">
+                This is the list of all sellers that have been made known to me. Here you can compare prices & figure out who you want to buy from. If a species/morph is <span style="color:#006600">colored like this</span> it means I already own that species/morph. The accuracy of this resource depends on its users, so keep me updated!
+              </th>
+            </tr>
+            <tr>
+              <th>Seller</th>
+              <th>Cost</th>
+              <th># of Pods</th>
+              <th>Price per Pod</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr class="expandable-row Armadillidium" onclick="toggleRow(this)">
+              <td colspan="4">Armadillidium badium 'Castledaccia'/'Sicily 2'</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-badium-p503666098">SBDC</a></td>
+              <td>$80.00</td>
+              <td>10</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td><a href="https://piscespets.com/collections/isopods/products/castledaccia-armadillidium-badium-isopods?variant=49270358835482">PPDC</a></td>
+              <td>$80.00</td>
+              <td>12</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-badium-p503666098">SBDC</a></td>
+              <td>$160</td>
+              <td>20</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td colspan="3">Market Average per Pod</td>
+              <td>$</td>
+            </tr>
+
+            <tr class="expandable-row Armadillidium" onclick="toggleRow(this)">
+                    <td colspan="4">Armadillidium corcyraeum</td>
                 </tr>
-            </thead>
-            <tbody id="tableBody">
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-corcyraeum-isopods?variant=40976980770931">IFDC</a></td>
+                    <td>$21.00</td>
+                    <td>6</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-corcyraeum-p138963806">SBDC</a></td>
+                    <td>$25.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.isopodshop.com/product-page/a-corycraem">ISDC</a></td>
+                    <td>$25.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-corcyraeum-isopods?variant=40976980770931">IFDC</a></td>
+                    <td>$34.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://rubberduckyisopods.com/products/corcyraeum-newly-released-isopods-armadillidium-corcyraeum-10-count">RDI</a></td>
+                    <td>$34.50</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-corcyraeum-p138963806">SBDC</a></td>
+                    <td>$50.00</td>
+                    <td>25</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-corcyraeum-isopods?variant=40976980770931">IFDC</a></td>
+                    <td>$85.00</td>
+                    <td>25</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td colspan="3">Market Average per Pod</td>
+                    <td>$</td>
+                </tr>
                 <tr class="expandable-row Armadillidium" onclick="toggleRow(this)">
-                    <td colspan="4">Morph 1</td>
+                    <td colspan="4">Armadillidium corcyraeum 'Silver'</td>
                 </tr>
                 <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-corcyraeum-silver-p503658856">SBDC</a></td>
+                    <td>$60.00</td>
+                    <td>10</td>
                     <td>$</td>
                 </tr>
                 <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-corcyraeum-silver-p503658856">SBDC</a></td>
+                    <td>$140</td>
+                    <td>25</td>
                     <td>$</td>
-                    <td>#</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td colspan="3">Market Average per Pod</td>
+                    <td>$</td>
+                </tr>
+                <tr class="expandable-row Armadillidium" onclick="toggleRow(this)">
+                    <td colspan="4">Armadillidium depressum</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-depressum-p151803012">SBDC</a></td>
+                    <td>$10.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://theisopodchick.com/shop/ols/products/armadillidum-depressum-10-count">TIC</a></td>
+                    <td>$25.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/products/armadillidium-depressum">FDDN</a></td>
+                    <td>$25.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.isopodshop.com/product-page/armadillidium-depressum">ISDC</a></td>
+                    <td>$25.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-depressum-p151803012">SBDC</a></td>
+                    <td>$30.00</td>
+                    <td>25</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/products/armadillidium-depressum">FDDN</a></td>
+                    <td>$53.00</td>
+                    <td>25</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-depressum-p151803012">SBDC</a></td>
+                    <td>$60.00</td>
+                    <td>50</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/products/armadillidium-depressum">FDDN</a></td>
+                    <td>$96.00</td>
+                    <td>50</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/products/armadillidium-depressum">FDDN</a></td>
+                    <td>$172</td>
+                    <td>100</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/products/armadillidium-depressum">FDDN</a></td>
+                    <td>$365</td>
+                    <td>250</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td colspan="3">Market Average per Pod</td>
+                    <td>$</td>
+                </tr>
+                <tr class="expandable-row Armadillidium" onclick="toggleRow(this)">
+                    <td colspan="4">Armadillidium frontetriangulum</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-frontetriangulum-p224354361">SBDC</a></td>
+                    <td>$50.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://rubberduckyisopods.com/products/frontetriangulum-corfu-armadillidium-frontetriangulum-10-count">RDI</a></td>
+                    <td>$69.50</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td colspan="3">Market Average per Pod</td>
+                    <td>$</td>
+                </tr>
+                <tr class="expandable-row Armadillidium" onclick="toggleRow(this)">
+                    <td colspan="4">Armadillidium gestroi</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.facebook.com/HalfPricedBugs">HPB</a></td>
+                    <td>$15.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-gestroi-isopods?variant=41780836335731">IFDC</a></td>
+                    <td>$18.00</td>
+                    <td>6</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-gestroi-isopods?variant=41780836335731">IFDC</a></td>
+                    <td>$30.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/collections/isopods/products/armadillidium-gestroi">FDDN</a></td>
+                    <td>$30.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-gestroi-p537439044">SBDC</a></td>
+                    <td>$30.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://theisopodchick.com/shop/ols/products/armadillidum-gestroi-10-count">TIC</a></td>
+                    <td>$45.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://rubberduckyisopods.com/products/gestroi-gorgeous-yellow-spotted-isopods-armadillidium-gestroi-10">RDI</a></td>
+                    <td>$49.50</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-gestroi-p537439044">SBDC</a></td>
+                    <td>$60.00</td>
+                    <td>25</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/collections/isopods/products/armadillidium-gestroi">FDDN</a></td>
+                    <td>$70.00</td>
+                    <td>25</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-gestroi-isopods?variant=41780836335731">IFDC</a></td>
+                    <td>$75.00</td>
+                    <td>25</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-gestroi-p537439044">SBDC</a></td>
+                    <td>$110</td>
+                    <td>50</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/collections/isopods/products/armadillidium-gestroi">FDDN</a></td>
+                    <td>$150</td>
+                    <td>50</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://www.smug-bug.com/available-animals/Armadillidium-gestroi-p537439044">SBDC</a></td>
+                    <td>$200</td>
+                    <td>100</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/collections/isopods/products/armadillidium-gestroi">FDDN</a></td>
+                    <td>$300</td>
+                    <td>100</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://frogdaddy.net/collections/isopods/products/armadillidium-gestroi">FDDN</a></td>
+                    <td>$545</td>
+                    <td>250</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td colspan="3">Market Average per Pod</td>
+                    <td>$</td>
+                </tr>
+                <tr class="expandable-row Armadillidium" onclick="toggleRow(this)">
+                    <td colspan="4">Armadillidium gestroi 'Zingers'</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-gestroi-zinger-isopods?variant=41780842922099">IFDC</a></td>
+                    <td>$36.00</td>
+                    <td>6</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://theisopodchick.com/shop/ols/products/armadillidum-gestroi-zinger-10-count">TIC</a></td>
+                    <td>$50.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-gestroi-zinger-isopods?variant=41780842922099">IFDC</a></td>
+                    <td>$60.00</td>
+                    <td>10</td>
+                    <td>$</td>
+                </tr>
+                <tr class="detail-row" style="display: none;">
+                    <td><a href="https://iso-flora.com/products/armadillidium-gestroi-zinger-isopods?variant=41780842922099">IFDC</a></td>
+                    <td>$150</td>
+                    <td>25</td>
                     <td>$</td>
                 </tr>
                 <tr class="detail-row" style="display: none;">
@@ -73,91 +367,91 @@
                     <td>$</td>
                 </tr>
 
-                <tr class="expandable-row Oniscus" onclick="toggleRow(this)">
-                    <td colspan="4">Morph 2</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
-                    <td>$</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
-                    <td>$</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td colspan="3">Market Average per Pod</td>
-                    <td>$</td>
-                </tr>
+            <tr class="expandable-row Oniscus" onclick="toggleRow(this)">
+              <td colspan="4">Morph 2</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td>SellerTag</td>
+              <td>$</td>
+              <td>#</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td>SellerTag</td>
+              <td>$</td>
+              <td>#</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td colspan="3">Market Average per Pod</td>
+              <td>$</td>
+            </tr>
 
-                <tr class="expandable-row Porcellio" onclick="toggleRow(this)">
-                    <td colspan="4">Morph 3</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
-                    <td>$</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
-                    <td>$</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td colspan="3">Market Average per Pod</td>
-                    <td>$</td>
-                </tr>
-                <tr class="expandable-row Porcellionides" onclick="toggleRow(this)">
-                    <td colspan="4">Morph 4</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
-                    <td>$</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
-                    <td>$</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td colspan="3">Market Average per Pod</td>
-                    <td>$</td>
-                </tr>
-                <tr class="expandable-row Other" onclick="toggleRow(this)">
-                    <td colspan="4">Morph 5</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
-                    <td>$</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td>SellerTag</td>
-                    <td>$</td>
-                    <td>#</td>
-                    <td>$</td>
-                </tr>
-                <tr class="detail-row" style="display: none;">
-                    <td colspan="3">Market Average per Pod</td>
-                    <td>$</td>
-                </tr>
-            </tbody>
+            <tr class="expandable-row Porcellio" onclick="toggleRow(this)">
+              <td colspan="4">Morph 3</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td>SellerTag</td>
+              <td>$</td>
+              <td>#</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td>SellerTag</td>
+              <td>$</td>
+              <td>#</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td colspan="3">Market Average per Pod</td>
+              <td>$</td>
+            </tr>
+            <tr class="expandable-row Porcellionides" onclick="toggleRow(this)">
+              <td colspan="4">Morph 4</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td>SellerTag</td>
+              <td>$</td>
+              <td>#</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td>SellerTag</td>
+              <td>$</td>
+              <td>#</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td colspan="3">Market Average per Pod</td>
+              <td>$</td>
+            </tr>
+            <tr class="expandable-row Other" onclick="toggleRow(this)">
+              <td colspan="4">Morph 5</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td>SellerTag</td>
+              <td>$</td>
+              <td>#</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td>SellerTag</td>
+              <td>$</td>
+              <td>#</td>
+              <td>$</td>
+            </tr>
+            <tr class="detail-row" style="display: none;">
+              <td colspan="3">Market Average per Pod</td>
+              <td>$</td>
+            </tr>
+          </tbody>
         </table>
     </div>
       
-      <tfoot>
+    <tfoot>
         
-      </tfoot>
-    </table>
-  </body>
+    </tfoot>
+  </table>
+</body>
   
 </html>
