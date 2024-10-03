@@ -1,15 +1,39 @@
+* {
+    box-sizing: border-box; /* Ensure precise box sizing */
+}
+
 body {
     font-family: Inconsolata;
-    font-size: 18px;
-    background-color: #2a2a2a;
+    background-color: #333;
     color: #fff;
     margin: 0;
     padding: 20px;
 }
 
+#container {
+    display: flex; /* Arrange filter and table in a row */
+}
+
+#filterContainer {
+    margin-right: 20px; /* Space between filter and table */
+    flex-shrink: 0; /* Prevent shrink */
+}
+
+#filterMenu {
+    margin-bottom: 20px; /* Space below filter menu */
+}
+
+.checkbox-group {
+    display: flex; /* Flex for the group */
+    flex-direction: column; /* Stack vertically */
+}
+
+label {
+    margin: 5px 0; /* Spacing between labels */
+}
+
 table {
-    width: 80%;
-    margin: 0 auto; /* Aligns the table to the center of the webpage */
+    width: 70%;
     table-layout: fixed;
 }
 
@@ -39,11 +63,28 @@ th {
 }
 
 #searchBar {
-    width: 70%;
+    width: 100%; /* Full width for the search bar */
     padding: 10px;
-    margin: 20px auto; /* Center the search bar with some margin */
     display: block;
     font-size: 16px;
     border: 1px solid #555;
-    border-radius: 4px; /* Rounded corners */
+    border-radius: 4px; /* Rounded edges */
+}
+
+#toggleFilterBtn {
+    margin-bottom: 10px; /* Spacing below */
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#toggleFilterBtn:hover {
+    background-color: #555;
+}
+
+.checkbox-group label {
+    margin: 5px 0; /* Spacing between labels */
+    font-size: 18px; /* Adjust font size here */
 }
